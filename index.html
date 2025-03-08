@@ -20,6 +20,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
 
         @keyframes bgAnimation {
@@ -80,17 +81,80 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* Floating Hearts Animation */
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .hearts span {
+            position: absolute;
+            bottom: -10px;
+            width: 20px;
+            height: 20px;
+            background: red;
+            transform: rotate(-45deg);
+            animation: floatHearts 5s infinite ease-in-out;
+        }
+
+        .hearts span::before,
+        .hearts span::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .hearts span::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .hearts span::after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes floatHearts {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
     </style>
 </head>
 <body>
+    <div class="hearts">
+        <span style="left: 10%; animation-duration: 4s; animation-delay: 0s;"></span>
+        <span style="left: 20%; animation-duration: 6s; animation-delay: 1s;"></span>
+        <span style="left: 30%; animation-duration: 5s; animation-delay: 2s;"></span>
+        <span style="left: 40%; animation-duration: 7s; animation-delay: 3s;"></span>
+        <span style="left: 50%; animation-duration: 6s; animation-delay: 4s;"></span>
+        <span style="left: 60%; animation-duration: 5s; animation-delay: 5s;"></span>
+        <span style="left: 70%; animation-duration: 7s; animation-delay: 2s;"></span>
+        <span style="left: 80%; animation-duration: 6s; animation-delay: 3s;"></span>
+        <span style="left: 90%; animation-duration: 5s; animation-delay: 1s;"></span>
+    </div>
+    
     <div class="container">
         <h1>I'm Sorry, Chintu! 💖</h1>
         <p>My love, Chintu ❤️, I never want to see you sad. You are my everything, and I cherish every moment with you. 💕</p>
         <p>Sometimes I make mistakes, but I promise to always love and support you. You mean the world to me! 🌸</p>
         <p>Please forgive me, my love. I will always hold your heart gently in mine. 🌟</p>
-        <div class="heart">❤️</div>
         <button class="btn" onclick="showMessage()">Click for a surprise</button>
-        <p id="message" class="hidden-message">You are my Love and sorry sara din is ko bana ma lag gya 💖😘</p>
+        <p id="message" class="hidden-message">You are my Love and sorry sara din is ko bana ma lag gya! 💖😘</p>
     </div>
 
     <script>
