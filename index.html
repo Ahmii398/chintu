@@ -25,7 +25,7 @@
         .container {
             max-width: 600px;
             margin: auto;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.3);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 4px 20px rgba(255, 100, 100, 0.5);
@@ -33,76 +33,52 @@
         }
 
         h1 {
-            font-size: 2.8em;
+            font-size: 3.5em;
+            font-weight: bold;
             text-shadow: 3px 3px 12px rgba(255, 200, 200, 0.8);
             animation: bounce 1.5s infinite alternate;
         }
 
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            100% { transform: translateY(-10px); }
+        p {
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
-        .floating-hearts {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            pointer-events: none;
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: white;
+            background: #990000;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(200, 0, 0, 0.5);
+            transition: transform 0.3s, background 0.3s;
+            animation: pulse 1.5s infinite alternate;
         }
 
-        .floating-hearts span {
-            position: absolute;
-            bottom: -10px;
-            width: 25px;
-            height: 25px;
-            background: red;
-            transform: rotate(-45deg);
-            animation: floatHearts 5s infinite ease-in-out;
+        .btn:hover {
+            background: #cc0000;
+            transform: scale(1.1);
         }
 
-        .floating-hearts span::before,
-        .floating-hearts span::after {
-            content: '';
-            position: absolute;
-            width: 25px;
-            height: 25px;
-            background: red;
-            border-radius: 50%;
+        .hidden-message {
+            display: none;
+            font-size: 2em;
+            font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
         }
 
-        .floating-hearts span::before {
-            top: -15px;
-            left: 0;
-        }
-
-        .floating-hearts span::after {
-            left: 15px;
-            top: 0;
-        }
-
-        @keyframes floatHearts {
-            0% {
-                transform: translateY(0) scale(1);
-                opacity: 1;
-            }
-            100% {
-                transform: translateY(-100vh) scale(1.5);
-                opacity: 0;
-            }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
-    <div class="floating-hearts">
-        <span style="left: 10%; animation-duration: 4s; animation-delay: 0s;"></span>
-        <span style="left: 20%; animation-duration: 6s; animation-delay: 1s;"></span>
-        <span style="left: 30%; animation-duration: 5s; animation-delay: 2s;"></span>
-        <span style="left: 40%; animation-duration: 7s; animation-delay: 3s;"></span>
-        <span style="left: 50%; animation-duration: 6s; animation-delay: 4s;"></span>
-    </div>
-
     <div class="container">
         <h1>I'm Sorry, Chintu! 💖</h1>
         <p>My love, Chintu ❤️, I never want to see you sad. You are my everything, and I cherish every moment with you. 💕</p>
@@ -110,7 +86,7 @@
         <p>Please forgive me, my love. I will always hold your heart gently in mine. 🌟</p>
         <div class="heart">❤️</div>
         <button class="btn" onclick="showMessage()">Click for a surprise</button>
-        <p id="message" class="hidden-message">You are my love sorry or sara din lag gya is ko bana ma! 💖😘</p>
+        <p id="message" class="hidden-message">You are my Love and sara din lag gya ha is ko bana ma! 💖😘</p>
     </div>
 
     <script>
