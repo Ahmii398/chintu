@@ -62,12 +62,17 @@
             cursor: pointer;
             box-shadow: 0 5px 15px rgba(200, 0, 0, 0.5);
             transition: transform 0.3s, background 0.3s;
-            animation: pulse 1.5s infinite alternate;
+            animation: buttonBounce 1.5s infinite alternate;
         }
 
         .btn:hover {
             background: #cc0000;
             transform: scale(1.1);
+        }
+
+        @keyframes buttonBounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-5px); }
         }
 
         .hidden-message {
@@ -154,7 +159,7 @@
         <p>Sometimes I make mistakes, but I promise to always love and support you. You mean the world to me! 🌸</p>
         <p>Please forgive me, my love. I will always hold your heart gently in mine. 🌟</p>
         <button class="btn" onclick="showMessage()">Click for a surprise</button>
-        <p id="message" class="hidden-message">You are my Love and sorry sara din is ko bana ma lag gya! 💖😘</p>
+        <p id="message" class="hidden-message">You are my Love and sorry sara din is ko bana ma lag gya  💖😘</p>
     </div>
 
     <script>
