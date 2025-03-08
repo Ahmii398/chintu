@@ -14,7 +14,12 @@
             color: white;
             margin: 0;
             padding: 50px;
-            overflow: hidden;
+            overflow: auto;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         @keyframes bgAnimation {
@@ -24,7 +29,6 @@
 
         .container {
             max-width: 600px;
-            margin: auto;
             background: rgba(255, 255, 255, 0.3);
             padding: 20px;
             border-radius: 15px;
@@ -86,7 +90,7 @@
         <p>Please forgive me, my love. I will always hold your heart gently in mine. 🌟</p>
         <div class="heart">❤️</div>
         <button class="btn" onclick="showMessage()">Click for a surprise</button>
-        <p id="message" class="hidden-message">You are my Love and sara din lag gya ha is ko bana ma! 💖😘</p>
+        <p id="message" class="hidden-message">You are my Love and sorry sara din is ko bana ma lag gya ! 💖😘</p>
     </div>
 
     <script>
